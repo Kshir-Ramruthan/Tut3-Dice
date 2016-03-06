@@ -11,7 +11,7 @@ Dice::Dice()
 //Return a randomly generated number
 int Dice::roll()
 {
-	return rand() % 6 + 1;
+	return (rand() % 6) + 1;
 }//End roll
 
 //Return the average of a specific number of rolls of the dice
@@ -20,23 +20,23 @@ float Dice::average(Dice die, int noRolls)
 	int sum = 0;
 	for (int i = 1; i <= noRolls;i++)
 	{
-		sum = sum + die.roll;
-	}
-	return sum / noRolls;
-}
+		sum = sum + die.roll();
+	}//End for-loop
+	return float(sum) / float(noRolls);
+}//End average
 
 //Return the average of a number of specified integers
 float Dice::average(int ints[], int noInts)
 {
-	int sum;
+	int sum=0;
 	for (int i = 0; i < noInts; i++)
 	{
 		sum = sum + ints[i];
-	}
-	return sum / noInts;
-}
+	}//for-loop
+	return float(sum) / float(noInts);
+}//End average
 
 //Default destructor
 Dice::~Dice()
 {
-}
+}//End destructor
